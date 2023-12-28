@@ -120,7 +120,7 @@ function DisplayTheTasks(tasks) {
   if(tasks.length == 0) {
     table.style.display = "none";
     noDiv.style.display = "block";
-    noDiv.innerHTML = "<h2>No tasks found</h2> <br> <img id='noTaskImg' src='https://cdn-icons-png.flaticon.com/512/5058/5058432.png'>";
+    noDiv.innerHTML = "<h2>No tasks found</h2> <br> <img id='noTaskImg' src='./task-list.png'>";
     return;
   }
   else{

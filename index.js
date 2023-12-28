@@ -109,7 +109,7 @@ app.post("/forgot-password", async (req, res) => {
     const mailOptions = {
       from: process.env.EMAIL_USERNAME,
       to: email,
-      subject: "Password Reset For ChroniFy",
+      subject: "Password Reset For TMS",
       html: `
         <html>
           <head></head>

@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #f9f8ff, #f8f4ff);
+    background: linear-gradient(to bottom, #ffd48b, #f8f4ff);
     color: #333;
     margin: 0px;
     padding: 0px;
@@ -62,18 +62,22 @@ textarea{
 }
 
 button {
-    background-color: #7bff52bc;
-    /* box-shadow: 2px 2px 1px rgba(89, 0, 255, 0.675); */
-    color:#00152a;
+    background-color: #3cff00bc;
+    /*box-shadow: 2px 2px 1px rgba(89, 0, 255, 0.675);
+    */color:#00152a;
     margin: auto;
     margin-top: 1.2rem;
     min-width: 10rem;
     padding: 10px 16px;
     border:#000000 solid 2px;
-    border-radius: 10px;
+    border-radius: 15px;
     cursor: pointer;
     font-weight: 600;
     transition: background-color 0.3s ease;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
 
 button:hover {
@@ -83,15 +87,19 @@ button:hover {
 
 
 #nextButton {
-    background-color: rgb(0, 5, 136);
+    background-color: rgb(255, 0, 0);
     border:rgb(140, 0, 255) solid 2px;
     color: rgb(255, 255, 255);
     margin: auto;
     margin-top: 1.2rem;
     padding: 10px 16px;
-    border-radius: 10px;
+    border-radius: 15px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
 
 #nextButton:hover {
