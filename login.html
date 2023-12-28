@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>ChroniFy - Login</title>
+        <meta name="description" content="Login to ChroniFy, a time management system. Sign in to manage your tasks efficiently.">
+        <meta name="keywords" content="ChroniFy, time management, login, task management, productivity">
+        <meta name="author" content="Your Name">
+        <meta property="og:title" content="ChroniFy - Login">
+        <meta property="og:description" content="Login to ChroniFy, a time management system. Sign in to manage your tasks efficiently.">
+        <meta property="og:url" content="https://chronify-rbk.cyclic.app/login">
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "ChroniFy",
+                "description": "A task management system software",
+                "applicationCategory": "Productivity",
+                "operatingSystem": "Cross-platform",
+                "url": "https://chronify-rbk.cyclic.app/login",
+                "keywords": "task management, organization, productivity"
+            }
+        </script>
+        <link rel="icon" href="./to-do-list-32.png" alt="flavicon" type="image/png">
+        <link rel="shortcut icon" href="./to-do-list-256.png" alt="flavicon" type="image/png">
+        <link rel="apple-touch-icon" href="./to-do-list-256.png" alt="flavicon" type="image/png">
+        <link rel="stylesheet" type="text/css" href="./login.css">
+    </head>
+    <body>
+        <center>
+            <div id="header">
+                <h1>ChroniFy</h1>
+                <p>Task Management System</p>
+            </div>
+            <div id="loginForm">
+                <form id="loginForm" onsubmit="login(event)">
+                    <label for="loginUsername">E-mail</label>
+                    <input type="email" id="loginUsername" name="username" 
+                        required>
+
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password"
+                        required>
+
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" onclick="toggleForm('registerForm')">Register</a></p>
+                <p><a href="#" style="color: rgb(183, 0, 255);" onclick="toggleForm('forgotPasswordForm')">Forgot Password?</a></p>
+            </div>
+
+            <div id="registerForm" class="hidden">
+                <h2>Register Here</h2>
+                <form id="registerForm" onsubmit="register(event)" method="POST">
+                    <label for="registerUsername">Username </label>
+                    <input type="text" id="registerUsername" name="username" required>
+                        <label for="registerUsername">E-mail Address </label>
+                        <input type="email" id="registerEmail" name="email" required>
+
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" name="password" required>
+
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="#"
+                        onclick="toggleForm('loginForm')">Login</a></p>
+            </div>
+
+            <div id="forgotPasswordForm" class="hidden">
+                <h2>Forgot Password</h2>
+                <form onsubmit="forgotPassword(event)">
+                    <label for="forgotPasswordEmail">Email</label>
+                    <input type="email" id="forgotPasswordEmail" name="email" required>
+                    <button type="submit">Reset Password</button>
+                </form>
+                <p><a href="#" onclick="toggleForm('loginForm')">Back to Login</a></p>
+            </div>
+        </center>
+
+        <script>
+            
+            function toggleForm(formId) {
+                var loginForm = document.getElementById('loginForm');
+                var registerForm = document.getElementById('registerForm');
+                var forgotPasswordForm = document.getElementById('forgotPasswordForm');
+            
+                if (formId === 'loginForm') {
+                    registerForm.classList.add('hidden', 'fade-in-out');
+                    loginForm.classList.remove('hidden');
+                    forgotPasswordForm.classList.add('hidden'); // Hide forgot password form
+                    // Add a small delay to trigger the fade-in-out animation
+                    setTimeout(() => {
+                        registerForm.classList.add('fade-in-out');
+                        loginForm.classList.add('fade-in-out');
+                    }, 10);
+                } else if (formId === 'forgotPasswordForm') {
+                    loginForm.classList.add('hidden', 'fade-in-out');
+                    registerForm.classList.add('hidden', 'fade-in-out');
+                    forgotPasswordForm.classList.remove('hidden');
+                    setTimeout(() => {
+                        loginForm.classList.add('fade-in-out');
+                        registerForm.classList.add('fade-in-out');
+                        forgotPasswordForm.classList.add('fade-in-out');
+                    }, 10);
+                } else {
+                    loginForm.classList.add('hidden', 'fade-in-out');
+                    registerForm.classList.remove('hidden');
+                    forgotPasswordForm.classList.add('hidden');
+                    setTimeout(() => {
+                        registerForm.classList.add('fade-in-out');
+                        loginForm.classList.add('fade-in-out');
+                    }, 10);
+                }
+            }
+            
+            
+        
+            function login(event) {
+                event.preventDefault();
+                const username = document.getElementById('loginUsername').value;
+                const password = document.getElementById('loginPassword').value;
+            
+                fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: username,
+                        password: password,
+                    }),
+                })
+                .then(response => {
+                    console.log('Response Status:', response.status);
+            
+                    if (!response.ok) {
+                        return response.json().then(errorData => {
+                            console.error('Server error:', errorData);
+                            return Promise.reject('Login failed');
+                        });
+                    }
+                    return response.json(); // Assuming your server sends JSON data upon successful login
+                })
+                .then(data => {
+                    console.log('Login successful:', data);
+                    // Assuming your server sends a token in the response
+                    if (data.token) {
+                        localStorage.setItem('token', data.token);
+                        window.location.href = '/';
+                    } else {
+                        console.error('Token not received from the server.');
+                    }
+                })
+                .catch(error => {
+                    alert('Login failed. Please try again.');
+                    console.error('Login error:', error);
+                });
+            }
+            
+            function register(event) {
+                event.preventDefault();
+                const username = document.getElementById('registerUsername').value;
+                const password = document.getElementById('registerPassword').value;
+                const email = document.getElementById('registerEmail').value;
+
+                console.log('Registering:', { username, password });
+            
+                fetch('/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: username,
+                        email: email,
+                        password: password,
+                    }),
+                })
+                .then(response => {
+                    console.log('Response Status:', response.status);
+                    return response.ok ? response.text() : Promise.reject('Registration failed');
+                })
+                .then(data => {
+                    alert('Registration successful. Please login.');
+                    console.log('Registration successful:', data);
+                    window.location.reload();
+                })
+                .catch(error => {
+                    console.error('Registration error:', error);
+                    alert('Sorry! Username already exists');
+                });
+            }
+
+            function forgotPassword(event) {
+                event.preventDefault();
+                const email = document.getElementById('forgotPasswordEmail').value;
+    
+                fetch('/forgot-password', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email }),
+                })
+                .then(response => {
+                    console.log('Response Status:', response.status);
+                    return response.ok ? response.text() : Promise.reject('Password reset failed');
+                })
+                .then(data => {
+                    alert('Password reset email sent. Please check your email.');
+                    console.log('Password reset successful:', data);
+                    toggleForm('loginForm'); // Switch back to the login form
+                })
+                .catch(error => {
+                    console.error('Password reset error:', error);
+                    alert('Password reset failed. Please try again.');
+                });
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,543 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f9f8ff, #f8f4ff);
+    color: #333;
+    margin: 0rem 1rem 1rem;
+    padding: 0.5rem 1rem 1rem;
+}
+
+#info {
+    background-color: #ffffff90;
+    text-align: center;
+    padding-top: 20px;
+    border-radius: .4rem;
+}
+
+h1 {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 3.4rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    color: rgb(76, 0, 207);
+    font-weight: 900;
+}
+
+.infoSubContainer {
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.infoSub {
+    flex: 1;
+    max-width: 45%; /* Adjust the max-width based on your preference /* Add some margin between the sub-info sections */
+}
+
+strong {
+    color: rgb(6, 0, 72);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #00133d;
+    font-size: medium;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+textarea,
+input,
+select {
+    width: 70%; /* Set width to 100% to make it responsive */
+    min-width: 16rem;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid rgb(61, 0, 122);
+    border-radius: 4px;
+    background-color: #fff;
+    color: #000;
+    background-color: rgba(242, 240, 255, 0.471);
+}
+
+textarea{
+    resize:none;
+    height: 3rem;
+}
+
+select {
+    width: 75%;
+}
+
+
+
+input:hover, select:hover {
+    background-color: #fbf8ff;
+    border-color: rgb(52, 52, 219);
+}
+
+table {
+    display:flexbox;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    margin: auto;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+thead {
+    background-color: rgb(0, 18, 97);
+    color: azure;
+}
+
+th, td {
+    vertical-align: middle;
+    padding: 12px;
+    border-bottom: 1px solid #000000;
+    width: 5%; 
+    font-size:medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.noTask{
+    text-align: center;
+}
+
+#noTaskImg{
+    height : 15%; 
+    width : 15%;
+    margin-left : 3.2%;
+    margin-bottom: 4.5rem;
+}
+
+#noTask > h2{
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(33, 33, 33);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+th {
+    text-align: center;
+    line-height: 1; /* Adjust the value to vertically center the text */
+}
+
+td{
+    text-align: center;
+}
+
+tbody{
+    background-color: rgba(240, 252, 255, 0.365);
+}
+
+.modal {
+    z-index: 99;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    z-index: 99;
+    min-width: 35rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #ff0000;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff7f50;
+}
+
+.back {
+    position: absolute;
+    display: block;
+    margin-right: 2.6rem;
+    color: #000000;
+    padding: 9px 9px 4px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 1rem;
+    right: 0;
+    top: 25px;
+    background-color: rgba(255, 248, 248, 0.953);
+    box-shadow: 2px 2px 0px rgb(255, 145, 145);
+}
+
+.back:hover {
+    background-color: rgb(255, 230, 230);
+    color: #ffffff;
+}
+
+.addnew{
+    position: absolute;
+    display: block;
+    margin-left: 2.5rem;
+    color: #000000;
+    padding: 9px 9px 4px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 1rem;
+    left: 0;
+    top: 25px;
+    background-color: rgba(241, 248, 255, 0.717);
+    box-shadow: 2px 2px 0px rgb(147, 176, 255);
+}
+
+.addnew:hover {
+    background-color: #43ff504f;
+    color: #000b01;
+}
+
+#addnew-img{
+    width: 48px;
+    height: 48px;
+}
+
+#back-img{
+    width: 48px;
+    height: 48px;
+}   
+
+
+.completed-task {
+    background-color: #48ff4817;
+    color: #000;
+    transition: background-color 1.3s, color 1.3s;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.warning-task {
+    background-color: #ffe62a1c;
+    color: #000;
+    transition: background-color 1.3s, color 1.3s;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.missing-task {
+    background-color: #ff3c6328;
+    color: #000;
+    transition: background-color 1.3s, color 1.3s;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.iconImg{
+    width: 34px;
+    height: 34px;
+}
+
+.iconBtn{
+    background-color: #fefdff;
+    color: #fff;
+    min-width: 3.5rem;
+    margin: 0.1rem .4rem;
+    padding: 7px 7px; /* More padding */
+    border:#000000 solid 0px;
+    box-shadow: 1.5px 1.5px 0px rgb(241, 158, 255);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: small;
+}
+
+.iconBtn:hover {
+    background-color: #f6eaff;
+}
+
+button {
+    background-color: #ff7f50;
+    color: #fff;
+    min-width: 7rem;
+    margin: 0.2rem 1rem;
+    padding: 9px 14px; /* More padding */
+    border:#000000 solid 0px;
+    box-shadow: 2px 2px 1px rgb(255, 0, 0);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: small;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #ff6347;
+}
+
+/* Add this CSS for the Action column */
+td.action-column {
+    text-align: center;
+    min-width: 19rem;
+    max-width: 19rem;
+    padding: 5px;
+}
+
+td.desc-data {
+    min-width: 26rem;
+}
+
+#watermark{
+    position: fixed;
+    bottom: 0px;
+    right: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(165, 165, 165, 0.164);
+    font-size: 11px;
+}
+
+#table-container {
+    display: block;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+}
+
+
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 8px 6px;
+    font-size: 14px;
+    border-radius: 5px;
+    color: #000000;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  select option {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Hover effect for the options */
+  select:hover, select option:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  select:focus {
+    background-color: #faefe0;
+    color: #333;
+    border-color: #f47703;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+#doneIcon:hover{
+
+}
+#delIcon:hover{
+    background-color: rgba(255, 42, 42, 0.177);
+}
+
+@media only screen and (max-width: 1150px) {
+    table{
+        display: block;
+    }
+    td.action-column {
+        text-align: center;
+        min-width: 10.5rem;
+        max-width: 10.5rem;
+    }
+    td.desc-data {
+        min-width: 13.5rem;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {
+    body{
+        touch-action: auto;
+        user-select: text;
+        margin: 0rem 0.5rem;
+        padding: 1rem 0.5rem;
+    }
+
+    h1{
+        margin-top: 1.2rem;
+        font-size: 2.7rem;
+        margin-bottom: 0.15rem;
+    }
+
+    #noTask > h2{
+        margin-top: 25%;
+    }
+    
+    #noTaskImg{
+        height : 30%; 
+        width : 30%;
+        margin-left : 8.6%;
+        margin-bottom: 72%;
+    }
+
+    .back {
+        margin-right: 0;
+        padding: 5px 6px 0.5px;
+        border-radius: 1rem;
+        top: 18px;
+        right: 21px;
+        box-shadow: 2px 2px 1px rgb(255, 145, 145);
+    }
+    
+    .addnew{
+        margin-left: 0;
+        padding: 5px 6px 0.5px;
+        border-radius: 0.8rem;
+        left: 18px;
+        top: 18px;
+    }
+
+    #addnew-img{
+        width: 38px;
+        height: 37px;
+    }
+    
+    #back-img{
+        width: 38px;
+        height: 38px;
+    }
+
+    #info {
+        padding-top: 1px;
+    }
+    label{
+        font-size: 14px;
+    }
+    
+    textarea,
+    input,
+    select {
+        min-width: 7rem;
+        font-size: 11px;
+        max-width: 16rem;
+        margin-bottom: 0px;
+    }
+    .modal-content select{
+        max-width: 78%;
+        width: 100%;
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 8px 6px;
+        font-size: 14px;
+        border-radius: 5px;
+        color: #000000;
+        outline: none;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        margin-bottom: 1rem;
+    }
+    
+    .modal-content {
+        min-width: 80%;
+        max-width: 100%;
+        padding: 20px;
+    }
+    
+    .iconImg{
+        padding: 3px 2px 2px 3px;
+        width: 26px;
+        height: 26px;
+    }
+
+    .iconBtn{
+        margin: 0.2rem 0.2rem;
+        font-size: 11px;
+        padding: 3px 2px; /* More padding */
+        min-width: 2.8rem;
+        border-radius: 8px;
+    }
+    
+    button {
+        margin: 0.2rem 0.4rem;
+        font-size: 11px;
+        padding: 7px 12px; /* More padding */
+        min-width: 5rem;
+        border-radius: 8px;
+    }
+    
+    /* Adjust table layout for small screens */
+    table {
+        display: block;
+        overflow-x: auto;
+        z-index: 5;
+    }
+    
+    th, td {
+        min-width: 1rem;
+        font-size: 13px;
+        vertical-align: middle;
+        font-family: Tahoma, sans-serif;
+        font-weight: 500;
+    }
+
+    td:first-child {
+        font-weight: 600;
+    }
+
+    /* Add this CSS for the Action column */
+    td.action-column {
+        max-width: 8rem;
+        min-width: 8rem;
+    }
+
+    center {
+        display: block;
+        z-index: -1;
+    }
+    .infoSubContainer {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .infoSub {
+        max-width: 100%;
+        margin: 5px 0px;
+    }
+
+    input {
+        max-width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .infoSubContainer > .infoSub {
+        width: calc(33.33% - 10px);
+    }
+
+    td.desc-data {
+        min-width: 8.5rem;
+    }
+
+    input[type="date"]
+    {
+        display:block;
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+    }
+}
+
+

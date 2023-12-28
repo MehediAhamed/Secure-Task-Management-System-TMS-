@@ -1,0 +1,230 @@
+/* login_register.css */
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 1px;
+  padding: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #f9f8ff, #f8f4ff);
+  touch-action: pan-y;
+  user-select: text;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+}
+
+
+#header {
+  text-align: center;
+  background-color: rgba(229, 203, 255, 0.13);
+  border-radius: 0.5rem;
+  padding: 1px 0px 10px;
+  margin-top: 1px;
+}
+
+h1 ~ p{
+  font-size: 24px;
+  color: orangered;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+center {
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.container {
+  background-color: #fff;
+  padding: 0px 20px 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h2 {
+    color: rgb(76, 0, 207);
+  }
+  
+/* Keyframes for animations */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Styling for h2 tags */
+h1 {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fefdff;
+  margin-bottom: 0px;
+  position: relative;
+  display: block;
+  background: linear-gradient(45deg, rgba(13, 0, 255, 0.556),rgba(174, 46, 229, 0.448));
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
+  padding: 8px;
+  margin-top: 1px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1:hover {
+  color: rgb(255, 244, 255);
+  transition: color 0.3s ease;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+  color: #000000;
+  font-size: 18px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #fbf8ff;
+}
+
+input:hover, select:hover {
+  background-color: #f7f0ff;
+  border-color: rgb(52, 52, 219);
+}
+
+button {
+  background-color: rgba(31, 0, 132, 0.829);
+  box-shadow: 2px 2px 1px rgb(165, 219, 255);
+  color: rgb(255, 253, 118);
+  padding: 7px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  min-width: 8rem;
+}
+
+button:hover {
+  background-color: rgb(0, 0, 179);
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  text-emphasis:calc(100% - 1px);
+  cursor: pointer;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.link-container {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.link-container a {
+  margin: 0 10px;
+}
+
+#loginForm,
+#registerForm {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+  transform-origin: center;
+}
+
+#registerForm > form {
+  background-color: rgb(254, 251, 255);
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+.fade-in-out {
+  animation: fadeInOut 0.5s ease;
+}
+
+#errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: 500;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+a{
+  font-weight: 600;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+a:hover {
+  text-decoration: underline;
+  color: #ea00ff;
+}
+
+a:active {
+  color: #13b0ff;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+  #header {
+    width: 100%;
+    position:static;
+    margin-top: 0;
+    padding-top: 0;
+
+  }
+  h1{
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+}
+

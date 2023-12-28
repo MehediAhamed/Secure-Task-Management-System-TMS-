@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="robots" content="index, follow">
+        <meta name="description" content="Chronify is a task management system software. It helps you to organize your tasks and increase your productivity.">
+        <meta name="keywords" content="task management, Chronify, task, management, organization, productivity">
+        <meta name="author" content="Radib Bin Kabir">
+        <meta name="application-name" content="Chronify">
+        <meta name="theme-color" content="#f8f4ff">
+        <meta name="msapplication-navbutton-color" content="#f8f4ff">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#f8f4ff">
+        <meta property="og:title" content="Chronify - Task Management System">
+        <meta property="og:description" content="Chronify is a task management system software. It helps you to organize your tasks and increase your productivity.">
+        <meta property="og:url" content="https://chronify-rbk.cyclic.app/">
+        <meta property="og:site_name" content="Chronify">
+        <title>Chronify - Task Management System</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="./index.css">
+        <link rel="canonical" href="https://chronify-rbk.cyclic.app">
+        <link rel="icon" href="./to-do-list-32.png" alt="flavicon" type="image/png">
+        <link rel="shortcut icon" href="./to-do-list-256.png" alt="flavicon" type="image/png">
+        <link rel="apple-touch-icon" href="./to-do-list-256.png" alt="flavicon" type="image/png">
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "ChroniFy",
+                "description": "A task management system software",
+                "applicationCategory": "Productivity",
+                "operatingSystem": "Cross-platform",
+                "url": "https://chronify-rbk.cyclic.app",
+                "keywords": "task management, organization, productivity"
+            }
+        </script>   
+    </head>
+    <body>
+        <center>
+            <div id="info">
+                <span class="addnew" onclick="GoBack()">
+                    <img id="addnew-img" src="https://img.icons8.com/fluency/48/add-to-clipboard.png" alt="add-to-clipboard"/>
+                </span>
+
+                <span class="back" onclick="logout()">
+                    <img id="back-img" src="https://img.icons8.com/fluency/48/shutdown.png" alt="shutdown"/>
+                </span>
+
+                <h1>ChroniFy</h1>
+
+                <div class="infoSubContainer">
+                    <div class="infoSub">
+                        <label for="searchInput">Search</label>
+                        <input type="text" id="searchInput"
+                            oninput="FetchToDisplayTheTasks()">
+                    </div>
+                </div>
+                <div class="infoSubContainer">
+                    <div class="infoSub">
+                        <label for="categoryFilter">Category</label>
+                        <select id="categoryFilter"></select>
+                    </div>
+                    <div class="infoSub">
+                        <label for="sortOption">Sort By</label>
+                        <select id="sortOption"
+                            onchange="FetchToDisplayTheTasks()">
+                            <option value="dueDate">Due Date</option>
+                            <option value="priority">Priority</option>
+                        </select>
+                    </div>
+                    <div class="infoSub">
+                        <label for="statusFilter">Status</label>
+                        <select id="statusFilter"
+                            onchange="FetchToDisplayTheTasks()">
+                            <option value>All</option>
+                            <option value="completed">Completed</option>
+                            <option value="pending">Pending</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="noTask">
+
+            </div>
+            <div id="table-container">
+                <table id="taskTable">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Priority</th>
+                            <th>Category</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="viewTasks">         
+                    </tbody>
+                </table>
+            </div>
+            <p id="watermark">@radib_bk</p>
+        </center>
+
+        <div id="taskDetailsModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="CloseDetailsWindow()">&times;</span>
+
+                <h2>Task Details</h2>
+                <div id="taskDetailsContent"></div>
+            </div>
+        </div>
+
+        <div id="editModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="CloseEditWindow()">&times;</span>
+                <h2>Edit Task</h2>
+                <center>
+
+                    <div id="editFormContent">
+                        <input type="hidden" id="editTaskId">
+
+                        <label for="editTitle">Title:</label>
+                        <input type="text" id="editTitle">
+
+                        <label for="editDescription">Description:</label>
+                        <textarea id="editDescription"></textarea>
+
+                        <label for="editDueDate">Due Date:</label>
+                        <input type="date" id="editDueDate">
+
+                        <label for="editCategory">Category:</label>
+                        <input type="text" id="editCategory">
+
+                        <label for="editPriority">Priority:</label>
+                        <select id="editPriority">
+                            <option value="1">High</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Low</option>
+                        </select>
+                        <div>
+                            <button onclick="SubmitEditForm()">Save</button>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>

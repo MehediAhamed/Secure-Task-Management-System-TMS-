@@ -1,0 +1,208 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f9f8ff, #f8f4ff);
+    color: #333;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(3, 0, 158);
+    font-weight: 700;
+    padding-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+
+#userinfo {
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 15px 0 8px;
+    color: #2c3e50;
+}
+
+input,
+textarea,
+select {
+    width: calc(100% - 24px); /* Adjusted to consider padding */
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ecf0f1;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+
+textarea:hover, input:hover, select:hover {
+    background-color: #fbf8ff;
+    border-color: rgb(52, 52, 219);
+}
+
+textarea{
+    resize: none;
+    height: 2rem;
+}
+
+button {
+    background-color: #7bff52bc;
+    /* box-shadow: 2px 2px 1px rgba(89, 0, 255, 0.675); */
+    color:#00152a;
+    margin: auto;
+    margin-top: 1.2rem;
+    min-width: 10rem;
+    padding: 10px 16px;
+    border:#000000 solid 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(0, 255, 38);
+    transition: background-color 0.3s ease;
+}
+
+
+#nextButton {
+    background-color: rgb(0, 5, 136);
+    border:rgb(140, 0, 255) solid 2px;
+    color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 1.2rem;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#nextButton:hover {
+    transition: background-color 0.3s ease;
+    background-color: #020090c6;
+    color: #ffffff;
+}
+
+select {
+    max-width: 100%;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 8px 6px;
+    font-size: 14px;
+    border-radius: 5px;
+    color: #000000;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+  select option {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Hover effect for the options */
+  select:hover, select option:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  select:focus {
+    background-color: #faefe0;
+    color: #333;
+    border-color: #f47703;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  input[type="date"]
+{
+    display:block;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+#form-container {
+    max-width: 600px; /* Set a maximum width for larger screens */
+    margin: 0 auto; /* Center the form container */
+    padding: 0px 30px 30px;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {
+    body{
+        touch-action: auto;
+        user-select: text;
+    }
+    
+    form {
+        padding: 20px;
+    }
+
+    button,
+    #nextButton {
+        font-size: 14px;
+        margin: 0.8rem 0rem;
+        min-width: 6rem;
+    }
+
+    button{
+        margin-left: 1.5rem;
+    }
+    #nextButton{
+        margin-right: 1.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+    button,
+    #nextButton {
+        font-size: 10px; /* Further adjust font size for even smaller screens */
+        margin: 0.8rem 0.6rem 0.3rem; 
+        min-width: 7.2rem;
+    }
+    h1{
+        padding-top: 2.5rem;
+        padding-bottom: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: large;
+    }
+    label{
+        font-size: small;
+    }
+    input,select,textarea{
+        font-size: small;
+        margin-bottom: 1px;
+    }
+    input{
+        padding: 8px 12px;
+    }
+    select{
+        margin-bottom: 1rem;
+    }
+    input[type="date"] {
+        display: inline-block; /* or use display: inline; */
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "200041125_tms",
+  "version": "1.0.0",
+  "description": "visit Link -  http://localhost:3000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "moment-timezone": "^0.5.43",
+    "mongodb": "^6.2.0",
+    "mongoose": "^8.0.0",
+    "nodemailer": "^6.9.7",
+    "nodemon": "^3.0.2",
+    "path": "^0.12.7",
+    "randomstring": "^1.3.0"
+  }
+}
