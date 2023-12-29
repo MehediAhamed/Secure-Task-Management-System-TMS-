@@ -105,7 +105,7 @@ app.post("/forgot-password", async (req, res) => {
     await user.save();
 
     // Send the reset password email
-    const resetLink = `${process.env.FRONTEND_URL || 'http://localhost:3000' || 'https://tms-qid6.onrender.com/'}/reset-password?token=${resetToken}`;
+    const resetLink = `${process.env.FRONTEND_URL || 'http://localhost:3000' || 'https://tms-qid6.onrender.com'}/reset-password?token=${resetToken}`;
     const mailOptions = {
       from: process.env.EMAIL_USERNAME,
       to: email,
