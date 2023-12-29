@@ -2,30 +2,22 @@
     "version": 2,
     "builds": [
       {
-        "src": "js/script.js", 
-        "use": "@vercel/node"
-      },
-      {
-        "src": "js/viewTask.js", 
-        "use": "@vercel/node"
-      },
-      {
-        "src": "index.js", 
+        "src": "js/index.js", 
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
         "src": "/js/(.*)",
-        "dest": "/js/script.js"
+        "dest": "/js/$1"
       },
       {
-        "src": "/js/(.*)",
-        "dest": "/js/viewTask.js"
+        "src": "/css/(.*)",
+        "dest": "/css/$1"
       },
       {
         "src": "/(.*)",
-        "dest": "/index.js"
+        "dest": "/index.html"
       }
     ],
     "env": {
