@@ -18,11 +18,11 @@
         <meta property="og:site_name" content="TMS">
         <title>TMS - Task Management System</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="./css/index.css">
         <link rel="canonical" href="https://TMS-rbk.cyclic.app">
-        <link rel="icon" href="./to-do-list-32.png" alt="flavicon" type="image/png">
-        <link rel="shortcut icon" href="./to-do-list-256.png" alt="flavicon" type="image/png">
-        <link rel="apple-touch-icon" href="./to-do-list-256.png" alt="flavicon" type="image/png">
+        <link rel="icon" href="./Assets/to-do-list-32.png" alt="flavicon" type="image/png">
+        <link rel="shortcut icon" href="./Assets/to-do-list-256.png" alt="flavicon" type="image/png">
+        <link rel="apple-touch-icon" href="./Assets/to-do-list-256.png" alt="flavicon" type="image/png">
         <script type="application/ld+json">
             {
                 "@context": "http://schema.org",
@@ -40,14 +40,14 @@
         <center>
             <div id="info">
                 <span class="addnew" onclick="GoBack()">
-                    <img id="addnew-img" src="./addTask.png" alt="add-to-clipboard"/>
+                    <img id="addnew-img" src="./Assets/addTask.png" alt="add-to-clipboard"/>
                 </span>
 
                 <span class="back" onclick="logout()">
                     <img id="back-img" src="https://img.icons8.com/plasticine/100/circled-left-2.png" alt="shutdown"/>
                 </span>
 
-                <h1>TMS</h1>
+                <h2> Secure Task Management System (TMS)</h2>
 
                 <div class="infoSubContainer">
                     <div class="infoSub">
@@ -55,8 +55,7 @@
                         <input type="text" id="searchInput"
                             oninput="FetchToDisplayTheTasks()">
                     </div>
-                </div>
-                <div class="infoSubContainer">
+                
                     <div class="infoSub">
                         <label for="categoryFilter">Category</label>
                         <select id="categoryFilter"></select>
@@ -115,7 +114,7 @@
         <div id="editModal" class="modal" style="display: none;">
             <div class="modal-content">
                 <span class="close" onclick="CloseEditWindow()">&times;</span>
-                <h2>Edit Task</h2>
+                <center><h2>Edit Task</h2></center>
                 <center>
 
                     <div id="editFormContent">
@@ -140,7 +139,7 @@
                             <option value="3">Low</option>
                         </select>
                         <div>
-                            <button onclick="SubmitEditForm()">Save</button>
+                            <button style="background-color: rgb(209, 0, 0);"  onclick="SubmitEditForm()">Save</button>
                         </div>
                     </center>
                 </div>
@@ -148,6 +147,6 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data.min.js"></script>
-        <script src="./script.js"></script>
+        <script src="./js/script.js"></script>
     </body>
 </html>

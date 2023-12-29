@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #f9f8ff, #f8f4ff);
+  background: linear-gradient(to bottom, #fffb81, #f8f4ff);
   touch-action: pan-y;
   user-select: text;
   -webkit-tap-highlight-color: transparent;
@@ -28,6 +28,7 @@ body {
 }
 
 h1 ~ p{
+  
   font-size: 24px;
   color: orangered;
   font-family: 'Courier New', Courier, monospace;
@@ -48,9 +49,12 @@ center {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
+#title{
+  font-weight: bold;
+  font-style: italic;
+}
 h2 {
-    color: rgb(76, 0, 207);
+    color: rgb(253, 22, 22);
   }
   
 /* Keyframes for animations */
@@ -69,13 +73,13 @@ h2 {
 /* Styling for h2 tags */
 h1 {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
   color: #fefdff;
   margin-bottom: 0px;
   position: relative;
   display: block;
-  background: linear-gradient(45deg, rgba(13, 0, 255, 0.556),rgba(174, 46, 229, 0.448));
+  background: rgb(255, 1, 1);
   background-size: 200% 200%;
   animation: gradientAnimation 5s ease infinite;
   padding: 8px;
@@ -137,7 +141,7 @@ button:hover {
 }
 
 a {
-  color: #007bff;
+  color: #006326;
   text-decoration: none;
   text-emphasis:calc(100% - 1px);
   cursor: pointer;
@@ -166,7 +170,7 @@ a {
 }
 
 #registerForm > form {
-  background-color: rgb(254, 251, 255);
+  background: linear-gradient(to bottom, #fffb81, #f8f4ff);
 }
 
 .hidden {
