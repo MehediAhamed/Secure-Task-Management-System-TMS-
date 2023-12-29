@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "js/index.js", 
+        "src": "js/script.js", 
         "use": "@vercel/node"
       }
     ],
@@ -14,6 +14,10 @@
       {
         "src": "/css/(.*)",
         "dest": "/css/$1"
+      },
+      {
+        "src": "/Assets/(.*)",
+        "dest": "/Assets/$1"
       },
       {
         "src": "/(.*)",
